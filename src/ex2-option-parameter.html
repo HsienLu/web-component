@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <hello-world class="AAA">123</hello-world>
+    <p is="hello-world"> </p>
+    <script>
+        class HelloWorld extends HTMLParagraphElement {
+            constructor() {
+                super();
+                this.attachShadow({mode: 'open'});
+                this.shadowRoot.innerHTML = `
+                    <style>
+                        h1 {
+                            color: blue;
+                            
+                        }
+
+                    </style>
+                    <h1>Hello World</h1>
+                `;
+            }
+        }
+        window.customElements.define('hello-world', HelloWorld, {extends: 'p'});
+        //                            ^^^^^^^^^^^   ^^^^^^^^^^^
+        //                            命名:烤肉串    類別名稱  
+        console.log(customElements)
+    </script>
+</body>
+</html>

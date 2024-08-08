@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4-title-text titleText="Hello World"></h4-title-text>
+    <script>
+        class H4TitleText extends HTMLElement{
+            constructor(){
+                super();
+                this.attachShadow({mode:'open'});
+                this.render();
+                this.styling();
+            }
+            static stylesheet=`
+                * {
+                    font-family: "Noto Sans TC", sans-serif !important;
+                }
+                h4{
+                    padding-top:0.25rem;
+                    margin-block:1.5rem; 
+                    font-size: 2rem;
+                    line-height: 1.5;color: #404040;
+                    font-weight: bold !important;
+                    text-align: left;
+                }
+            `;
+            render(){
+                this.text=document.createElement('h4');
+                this.shadowRoot.appendChild(this.text);
+                this.text.textContent=this.getAttribute('titleText');
+            }
+            styling(){
+                this.stylesheet=document.createElement('style');
+                this.stylesheet.textContent=this.constructor.stylesheet;
+                this.shadowRoot.appendChild(this.stylesheet);
+            }
+    
+        }
+        window.customElements.define('h4-title-text',H4TitleText);
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <template id="cardTmp">
+        <div class="header">MY CARD</div>
+        <div class="details">
+            My name is <slot name="userName">Robin</slot>。
+        </div>
+    </template>
+    <my-card>
+        
+    </my-card>
+
+    <my-card>
+        <span slot="userName">web Components</span>
+    </my-card>
+    <script>
+        class MyCard extends HTMLElement {
+            constructor() {
+                super();
+                
+                const templateContent = document.getElementById('cardTmp').content;
+
+                this.attachShadow({ mode: 'open' }).appendChild(
+                    templateContent.cloneNode(true)
+                );
+            }
+        }
+        customElements.define('my-card', MyCard);
+    </script>
+</body>
+
+</html>

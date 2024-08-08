@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --h1-color: gray;
+        }
+        h1 {
+            
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>hello world</h1>
+    <hello-world helloName="Amy" isHide="123"></hello-world>
+    <script>
+        class HelloWorld extends HTMLElement {
+            constructor() {
+                super();
+                this.attachShadow({mode: 'open'});
+                const helloName=this.getAttribute('helloName');
+                const isHide=this.getAttribute('isHide');
+                let value="false"
+                isHide === "true" ? value='none' : value='block';
+                this.shadowRoot.innerHTML = `
+                    <style>
+                        h1 {
+                            color: blue;
+                            display: ${value};
+                        }
+
+                    </style>
+                    <h1>Hello World ${helloName}</h1>
+                `;
+            }
+        }
+        window.customElements.define('hello-world', HelloWorld);
+    </script>
+</body>
+</html>

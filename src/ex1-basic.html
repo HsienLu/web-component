@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --h1-color: gray;
+        }
+        h1 {
+            
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>hello world</h1>
+    <!-- web componet -->
+    <hello-world></hello-world>
+    
+    <!-- web componet 架構 -->
+    <script>
+        class HelloWorld extends HTMLElement {
+            constructor() {
+                super();
+                this.attachShadow({mode: 'open'});
+                this.shadowRoot.innerHTML = `
+                    <style>
+                        h1 {
+                            color: blue;
+                        }
+
+                    </style>
+                    <h1>Hello World</h1>
+                `;
+            }
+        }
+        window.customElements.define('hello-world', HelloWorld);
+        //                            ^^^^^^^^^^^   ^^^^^^^^^^^
+        //                            命名:烤肉串    類別名稱  
+        console.log(customElements)
+    </script>
+</body>
+</html>
+<!-- 
+    1.創建class 並extends HTMLElement
+    2.寫出構造函示 constructor(){
+        super();繼承HTMLElement的方法
+        this.attachShadow({mode:'open'});打開shadowRoot
+        
+    }
+    3.告訴瀏覽器這是一個自定義元素，從標籤到類 window.customElements.define('hello-world',helloWorld);
+ -->

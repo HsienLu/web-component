@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>什麼是class</title>
+</head>
+
+<body>
+    <script>
+
+        class AAA {//定義一個class名為AAA
+
+            callThis() { //定義一個方法名為callThis
+
+                console.log(this);//那這個this是指什麼呢?
+            }
+        }
+
+        //建立一個AAA的物件
+        let aaa = new AAA();
+        aaa.callThis();
+    </script>
+</body>
+
+</html>
+<script>
+
+
+// //ES5的寫法
+// function AAA() { // 定義一個"類別"，其實是構造函數
+// }
+
+// AAA.prototype.callThis = function () { // 在原型上定義方法 callThis
+//     console.log(this); // this 代表的是這個方法被呼叫的時候所屬的物件
+// };
+</script>
