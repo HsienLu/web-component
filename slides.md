@@ -33,16 +33,16 @@ transition: slide-left
 
 <img style='margin-top:2rem' src="./src/image-5.png" width="600">
 
-
 ---
 
 # 快速開始
+
 1. class的this
-   - [範例0](./src/ex0.html)
+   - [範例0](https://github.com/HsienLu/web-component/blob/main/src/ex0.html)
 2. web component 基本架構
-   - [範例1](./src/ex1-basic.html)
+   - [範例1](https://github.com/HsienLu/web-component/blob/main/src/ex1-basic.html)
 3. web component另一種形式
-   - [範例2](./src/ex2-option-parameter.html)
+   - [範例2](https://github.com/HsienLu/web-component/blob/main/src/ex2-option-parameter.html)
 
 ---
 
@@ -51,12 +51,13 @@ transition: slide-left
 1. 架構
 2. 烤肉串命名:至少帶有一個連字符號
 3. 防護罩:變數汙染
+
 ```js
-        class HelloWorld extends HTMLElement {
-            constructor() {
-                super();
-                this.attachShadow({mode: 'open'});
-                this.shadowRoot.innerHTML = `
+class HelloWorld extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({mode: "open"});
+    this.shadowRoot.innerHTML = `
                     <style>
                         h1 {
                             color: blue;
@@ -65,9 +66,9 @@ transition: slide-left
                     </style>
                     <h1>Hello World</h1>
                 `;
-            }
-        }
-        window.customElements.define('hello-world', HelloWorld);
+  }
+}
+window.customElements.define("hello-world", HelloWorld);
 ```
 
 ---
@@ -84,15 +85,17 @@ transition: slide-left
   <img src="./src/image-2.png" width="300">
 </div>
 
+除非...你要支援IE~~
+
 ---
 
 # HTML Templates & Slots
 
-- [範例3](./src/ex3-templete.html)
+- [範例3](https://github.com/HsienLu/web-component/blob/main/src/ex3-templete.html)
 
 ---
 
-## 總結
+## 小結
 
 - 自主自定義元素（Autonomous custom elements）的建構函數只能繼承 `HTMLElement`，且調用 `customElements.define()`
 - 客製化內建元素（Customized built-in elements）的建構函數一般只能繼承可用的基本 HTML 標籤類別，且調用 `customElements.define()` 方法時必須要傳入第三個參數，第三個參數一般為： `{extends: "標籤名"}`
@@ -103,15 +106,13 @@ transition: slide-left
 
 # 傳值
 
-- [範例4](./src/ex4-props.html)
+- [範例4](https://github.com/HsienLu/web-component/blob/main/src/ex4-props.html)
 
 ---
 
 # 整齊一點的寫法
 
-- [範例5](./src/ex5.html)
-
-
+- [範例5](https://github.com/HsienLu/web-component/blob/main/src/ex5-adv..html)
 
 ---
 
@@ -121,6 +122,20 @@ Github:https://github.com/HsienLu/HexHexo
 
 Github Pages:https://hex-hexo.vercel.app/
 
+---
+
+<style>
+    .centered {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+    }
+</style>
+
+#
+
+## <div class="centered" style="font-size:48px">到這裡我的分享已經結束了~~但是...</div>
 
 ---
 

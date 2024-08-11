@@ -8,17 +8,21 @@
 </head>
 
 <body>
-    
+
     <template id="cardTmp">
         <div class="header">MY CARD</div>
         <div class="details">
             My name is <slot name="userName">Robin</slot>。
         </div>
     </template>
+    <!-- 如果都不給內容的情況(預設) -->
     <my-card>
-        
-    </my-card>
 
+    </my-card>
+    <!-- 我是分隔線 -->
+    <hr>
+    <!-- 我是分隔線 -->
+    <!-- 如果給內容的情況 -->
     <my-card>
         <span slot="userName">web Components</span>
     </my-card>
@@ -26,7 +30,7 @@
         class MyCard extends HTMLElement {
             constructor() {
                 super();
-                
+
                 const templateContent = document.getElementById('cardTmp').content;
 
                 this.attachShadow({ mode: 'open' }).appendChild(

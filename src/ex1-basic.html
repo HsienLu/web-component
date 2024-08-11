@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,23 +9,26 @@
         :root {
             --h1-color: gray;
         }
+
         h1 {
-            
+
             color: red;
         }
     </style>
 </head>
+
 <body>
+    <!-- 普通標籤 -->
     <h1>hello world</h1>
     <!-- web componet -->
     <hello-world></hello-world>
-    
+
     <!-- web componet 架構 -->
     <script>
         class HelloWorld extends HTMLElement {
             constructor() {
                 super();
-                this.attachShadow({mode: 'open'});
+                this.attachShadow({ mode: 'open' });
                 this.shadowRoot.innerHTML = `
                     <style>
                         h1 {
@@ -42,6 +46,7 @@
         console.log(customElements)
     </script>
 </body>
+
 </html>
 <!-- 
     1.創建class 並extends HTMLElement
