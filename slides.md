@@ -31,8 +31,8 @@ transition: slide-left
 
 ## 情境3: 全域 CSS 干擾
 
-<img style='margin-top:2rem' src="./src/image-5.png" width="600">
-
+<img style='margin-top:2rem' src="./src/image-5.png" width="600">  
+<img style='position:absolute;right:-371px;top:214px' src="./image.png" width="600">
 ---
 
 # 快速開始
@@ -43,7 +43,7 @@ transition: slide-left
    - [範例1](https://github.com/HsienLu/web-component/blob/main/src/ex1-basic.html)
 3. web component另一種形式
    - [範例2](https://github.com/HsienLu/web-component/blob/main/src/ex2-option-parameter.html)
-
+<img style='position:absolute;right:100px;top:50px' src="./image-1.svg" width="">
 ---
 
 # 快速開始 - 解釋
