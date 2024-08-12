@@ -20,7 +20,7 @@
 <body>
     <!-- 普通標籤 -->
     <h1>hello world</h1>
-    <!-- web componet -->
+    <!-- web componet 裡面也是放一個h1標籤-->
     <hello-world></hello-world>
 
     <!-- web componet 架構 -->
@@ -30,12 +30,7 @@
                 super();
                 this.attachShadow({ mode: 'open' });
                 this.shadowRoot.innerHTML = `
-                    <style>
-                        h1 {
-                            color: blue;
-                        }
 
-                    </style>
                     <h1>Hello World</h1>
                 `;
             }
